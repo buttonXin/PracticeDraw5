@@ -1,3 +1,32 @@
+- 学习到的小知识
+```
+在imageview中进行获取对应的的已经创建好的矩阵
+canvas.concat(getImageMatrix());
+Rect bounds = drawable.getBounds();
+
+textview中的
+Layout layout = getLayout();
+获取第一行的text的左上角的坐标
+left = layout.getLineLeft(1);
+
+
+主要注意一下绘制的流程!!!
+    draw(){
+
+    ...
+
+    drawBackground(Canvas); // 绘制背景（不能重写）
+    onDraw(Canvas); // 绘制主体
+    dispatchDraw(Canvas); // 绘制子 View
+    onDrawForeground(Canvas); // 绘制滑动相关和前景
+
+    ...
+
+    }
+
+```
+
+
 ![](images/icon.png)
 
 HenCoder 绘制 5 练习项目
